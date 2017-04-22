@@ -23,7 +23,7 @@ from registration.backends.simple.views import RegistrationView
 
 class MyRegistrationView(RegistrationView):
 	def get_success_url(self,user):
-		return '/techpedia/'
+		return url('register_profile')
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$',views.index,name='index'),
