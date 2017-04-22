@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'techpedia',
+    'registration',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -127,3 +128,10 @@ STATICFILES_DIRS=[STATIC_DIR,]
 #Media files
 MEDIA_ROOT=MEDIA_DIR
 MEDIA_URL='/media/'
+
+#Registration
+REGISTRATION_OPEN=True
+ACCOUNT_ACTIVATION_DAYS=7
+REGISTRATION_AUTO_LOGIN=True
+LOGIN_REDIRECT_URL='/techpedia/'
+LOGIN_URL='/accounts/login/'
