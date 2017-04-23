@@ -5,11 +5,13 @@
 	     	Techpedia - Add Page
 	     {% endblock %}
 	    {%block body_block%}
+	    	<br><br>
 			<link href="https://v4-alpha.getbootstrap.com/examples/signin/signin.css" rel="stylesheet">
 			
 			{% if category %}
-				<form role="form" id="page_form" method="post" action="/techpedia/category/{{category.slug}}/add_page/">
-	        	<h2 class="form-signin-heading">Add a Page to <a href="/techpedia/category/{{category.slug}}/">{{ category.name }}</h2>
+				
+				<h1>Add a Page to {{category.name}}</h1>
+        		<form id="page_form" method="post" action="/techpedia/category/{{ category.slug }}/add_page/">
 	            {% csrf_token %}
 	            {% for hidden in form.hidden_fields %}
 	                {{ hidden }}
@@ -20,7 +22,7 @@
 	                {{ field }}
 	            {% endfor %}
 	            <br />
-	            <button class="btn btn-primary" type="submit" name="submit">Add page</button>        
+	              <input type="submit" name="submit" value="Add Page" />        
 	            </form>
 			{% else %}
 				This category does not exist!
